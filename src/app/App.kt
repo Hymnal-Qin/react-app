@@ -1,5 +1,6 @@
 package app
 
+import game.game
 import kotlinx.html.js.onClickFunction
 import react.*
 import react.dom.*
@@ -9,6 +10,9 @@ import mycomp.mycomp1
 import ticker.*
 
 class App : RComponent<RProps, RState>() {
+
+    private var pass = 0
+
     override fun RBuilder.render() {
         div("App-header") {
             logo()
@@ -35,8 +39,10 @@ class App : RComponent<RProps, RState>() {
             +"Click"
             attrs.onClickFunction = { setState { pass += 1 } }
         }
+
+        div {
+            game()
+        }
     }
 }
-
-var pass = 0
 fun RBuilder.app() = child(App::class) {}

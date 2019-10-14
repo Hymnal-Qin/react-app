@@ -11,7 +11,7 @@ interface MyProps : RProps {
 
 class MyComp1(props: MyProps) : RComponent<MyProps, RState>(props) {
     override fun RBuilder.render() {
-        +"This is my component. ${props.pass}."
+        +"This is my component. This is ${props.pass}."
     }
 
 }
